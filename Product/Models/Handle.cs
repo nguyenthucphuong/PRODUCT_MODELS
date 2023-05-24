@@ -58,7 +58,7 @@ namespace Product.Models
 				handleList.Remove(handle);
 			}
 
-			for (int i = 0; i < handleList.Count; i++)
+			for (int i = id; i < handleList.Count; i++)
 			{
 				handleList[i].SoThuTu = i + 1;
 			}
