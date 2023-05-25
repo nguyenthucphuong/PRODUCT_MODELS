@@ -305,3 +305,7 @@ table th {
     width: 90%;
     border: none;
 }
+.amount {
+    font-size: 20px;
+    font-weight: bold;
+}

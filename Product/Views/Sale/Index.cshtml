@@ -52,7 +52,6 @@
 						</tbody>
 					</table>
 				</div>
-
 				<div id="totalAmount">Tổng thành tiền: <span id="tongtien">@Handle.tinhTongTien.ToString("n0")</span> đồng</div>
 			</div>
 		</div>
@@ -74,9 +73,28 @@
 			<form action="/Sale/ThanhToan" method="post">
 				<div class="button-container">
 					<button type="submit" id="themvao" form="myform" class="button">Thêm vào giỏ hàng</button>
-					<button type="submit" id="thanhtoan" class="button">Thanh toán</button>
+					<button type="button" id="thanhtoan" class="button" data-bs-toggle="modal" data-bs-target="#myDialog">Thanh toán</button>
 				</div>
 			</form>
+			<div class="modal fade" id="myDialog" tabindex="-1" aria-labelledby="myDialogLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myDialogLabel">Xác nhận thanh toán</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<p>Tổng tiền phải thanh toán là: <span class="amount">@Handle.tinhTongTien.ToString("n0")</span> đồng</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+							<form action="/Sale/ThanhToan" method="post">
+								<button type="submit" class="btn btn-primary">Đồng ý</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
